@@ -181,18 +181,24 @@ header {
 /* dynamic weather */
 
 .weather-container {
-  height: 400px;
+  height: 200px;
   width: auto;
   background-color: rgb(44, 44, 44);
   padding: 50px;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .stat-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  
+}
+
+.text {
+  margin-bottom: 20px;
 }
 
 .text h2 {
@@ -208,6 +214,25 @@ header {
   font-size: 5rem;
 }
 
+.temp-f {
+  margin-right: 20px;
+  display: flex;
+  border-right: 1px solid white;
+  padding-right: 20px;
+}
+
 #F-C {
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-weight: 600;
+  margin-top: 10px;
 }
+
+.stats p {
+  padding: 5px 0;
+}
+
+
