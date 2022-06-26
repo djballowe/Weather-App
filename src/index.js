@@ -6,7 +6,7 @@ const wind = document.getElementById('wind');
 const humidity = document.getElementById('humidity');
 const button = document.getElementById('converter');
 
-async function getWeather() {
+async function getWeather(info) {
   const response = await fetch(
     'http://api.openweathermap.org/data/2.5/weather?q=san%20francisco&APPID=6d73026f9846ee18797b582be8d69941',
   );
@@ -15,8 +15,14 @@ async function getWeather() {
 
   description.textContent = weatherData.weather[0].description.toUpperCase();
   city.textContent = weatherData.name.toUpperCase();
-  temp.textContent = parseInt((weatherData.main.temp - 273.15) * (9 / 5) + 32, 10);
-  feels.textContent = `Feels Like: ${parseInt((weatherData.main.feels_like - 273.15) * (9 / 5) + 32, 10)}`;
+  temp.textContent = Math.round(
+    (weatherData.main.temp - 273.15) * (9 / 5) + 32,
+    10,
+  );
+  feels.textContent = `Feels Like: ${Math.round(
+    (weatherData.main.feels_like - 273.15) * (9 / 5) + 32,
+    10,
+  )}`;
   wind.textContent = `Wind: ${weatherData.wind.speed} MPH`;
   humidity.textContent = `Humidity: ${weatherData.main.humidity}%`;
 }
@@ -24,14 +30,16 @@ async function getWeather() {
 getWeather();
 
 function converter() {
-  if (button.textContent === 'F') {
-    button.textContent = 'C';
-    temp.textContent = parseInt((temp.textContent - 32) * (5 / 9), 10);
-  } if (button.textContent === 'C') {
+  if (button.textContent === 'C') {
     button.textContent = 'F';
-    temp.textContent = parseInt((temp.textContent - 32) * (5 / 9), 10);
+    temp.textContent = Math.round((temp.textContent - 32) * (5 / 9));
+  } else if (button.textContent === 'F') {
+    button.textContent = 'C';
+    temp.textContent = Math.round(temp.textContent * (9 / 5) + 32);
   }
 }
+
+function search() {}
 
 button.addEventListener('click', () => {
   converter();
