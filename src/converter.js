@@ -1,3 +1,20 @@
+const description = document.getElementById('description');
+const city = document.getElementById('city');
+const temp = document.getElementById('temp');
+const feels = document.getElementById('feels');
+const wind = document.getElementById('wind');
+const humidity = document.getElementById('humidity');
+const button = document.getElementById('converter');
+
+function weatherDom(weather) {
+  description.textContent = weather.description;
+  city.textContent = weather.city;
+  temp.textContent = weather.temp;
+  feels.textContent = weather.feels;
+  wind.textContent = weather.wind;
+  humidity.textContent = weather.humidity;
+}
+
 function converter() {
   if (button.textContent === 'C') {
     button.textContent = 'F';
@@ -10,4 +27,4 @@ function converter() {
   }
 }
 
-export { converter };
+export { converter, weatherDom };
