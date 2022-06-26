@@ -3,6 +3,8 @@
 // eslint-disable-next-line import/prefer-default-export
 import { weatherDom } from './converter';
 
+export let info = [];
+
 class WeatherCreator {
   constructor(description, city, temp, feels, wind, humidity) {
     this.description = description;
@@ -29,6 +31,7 @@ async function getWeather() {
     `Humidity: ${weatherData.main.humidity}%`,
   );
   weatherDom(weather);
+  info.push(weather);
 }
 
 getWeather();

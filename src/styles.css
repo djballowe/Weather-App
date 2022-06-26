@@ -220,6 +220,15 @@ header {
   padding-right: 20px;
 }
 
+.feels {
+  display: flex;
+  align-items: center;
+}
+
+#feels-C-F {
+  font-size: 1rem;
+}
+
 #F-C {
   font-size: 1rem;
   display: flex;
@@ -256,4 +265,8 @@ header {
 #converter:hover {
   background-color: rgba(255, 255, 255, 0.63);
   color: black;
+}
+
+.C {
+  display: none;
 }
