@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/prefer-default-export
-export const weather = [];
+export const info = [];
 
 class WeatherCreator {
   constructor(description, city, temp, feels, wind, humidity) {
@@ -17,7 +17,7 @@ async function getWeather() {
     'http://api.openweathermap.org/data/2.5/weather?q=san%20francisco&APPID=6d73026f9846ee18797b582be8d69941',
   );
   const weatherData = await response.json();
-  weather.push(
+  info.push(
     new WeatherCreator(
       weatherData.weather[0].description,
       weatherData.name.toUpperCase(),
@@ -29,5 +29,5 @@ async function getWeather() {
   );
 }
 
-getWeather();
-console.log(weather);
+export { getWeather };
+console.log(info);
