@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
 /* eslint-disable prefer-const */
 // eslint-disable-next-line import/prefer-default-export
@@ -16,9 +17,9 @@ class WeatherCreator {
   }
 }
 
-async function getWeather() {
+async function getWeather(cityInfo) {
   const response = await fetch(
-    'http://api.openweathermap.org/data/2.5/weather?q=san%20francisco&APPID=6d73026f9846ee18797b582be8d69941',
+    `http://api.openweathermap.org/data/2.5/weather?q=${cityInfo}&APPID=6d73026f9846ee18797b582be8d69941`,
   );
   const weatherData = await response.json();
 
@@ -30,10 +31,14 @@ async function getWeather() {
     `Wind: ${weatherData.wind.speed} MPH`,
     `Humidity: ${weatherData.main.humidity}%`,
   );
+
+  if (info.length > 0) {
+    info.splice(0);
+  }
   weatherDom(weather);
   info.push(weather);
 }
 
-getWeather();
+getWeather('san francisco');
 
 export { getWeather };

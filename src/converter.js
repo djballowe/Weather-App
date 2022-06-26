@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { info } from './getWeather';
 
 const description = document.getElementById('description');
