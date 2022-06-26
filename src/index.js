@@ -1,10 +1,10 @@
-const weatherStatus = document.querySelector('.text');
 const description = document.getElementById('description');
 const city = document.getElementById('city');
 const temp = document.getElementById('temp');
 const feels = document.getElementById('feels');
 const wind = document.getElementById('wind');
 const humidity = document.getElementById('humidity');
+const button = document.getElementById('converter');
 
 async function getWeather() {
   const response = await fetch(
@@ -22,3 +22,17 @@ async function getWeather() {
 }
 
 getWeather();
+
+function converter() {
+  if (button.textContent === 'F') {
+    button.textContent = 'C';
+    temp.textContent = parseInt((temp.textContent - 32) * (5 / 9), 10);
+  } if (button.textContent === 'C') {
+    button.textContent = 'F';
+    temp.textContent = parseInt((temp.textContent - 32) * (5 / 9), 10);
+  }
+}
+
+button.addEventListener('click', () => {
+  converter();
+});

@@ -234,7 +234,7 @@ header {
   padding: 5px 0;
 }
 
-/* .converter {
+.converter {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -256,4 +256,4 @@ header {
 #converter:hover {
   background-color: rgba(255, 255, 255, 0.63);
   color: black;
-} */
+}
