@@ -40,6 +40,4 @@ function converter() {
   }
 }
 
-console.log(info);
-
 export { converter, weatherDom };

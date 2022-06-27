@@ -24,8 +24,6 @@ async function getWeather(cityInfo) {
   );
   const weatherData = await response.json();
 
-  console.log(weatherData);
-
   if (weatherData.message === 'city not found') {
     alert('Error City Not Found');
   }
