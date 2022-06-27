@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
 /* eslint-disable prefer-const */
