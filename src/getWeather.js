@@ -18,6 +18,7 @@ class WeatherCreator {
 }
 
 async function getWeather(cityInfo) {
+  console.log(cityInfo);
   const response = await fetch(
     `http://api.openweathermap.org/data/2.5/weather?q=${cityInfo}&APPID=6d73026f9846ee18797b582be8d69941`,
   );

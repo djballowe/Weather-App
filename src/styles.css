@@ -162,6 +162,8 @@ header {
   display: flex;
   color: white;
   align-items: center;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .hamburger input {
@@ -176,6 +178,26 @@ header {
 
 .hamburger input:focus {
   outline: none;
+}
+
+.hamburger button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5px;
+}
+
+.hamburger button:hover {
+  background: rgb(90, 90, 90);
+}
+
+.search img {
+  height: 30px;
+  width: 30px;
 }
 
 /* dynamic weather */
